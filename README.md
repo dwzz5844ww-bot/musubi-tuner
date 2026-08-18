@@ -10,6 +10,10 @@
 - [Musubi Tuner](#musubi-tuner)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
+    - [SCM LTX-2.5 Enhanced Branch](#scm-ltx-25-enhanced-branch)
+      - [Validated LTX-2.5 Environment](#validated-ltx-25-environment)
+      - [LTX-2.5 Workflow Validation](#ltx-25-workflow-validation)
+      - [Tested Windows Examples](#tested-windows-examples)
     - [Sponsors](#sponsors)
     - [Support the Project](#support-the-project)
     - [Recent Updates](#recent-updates)
@@ -46,6 +50,58 @@ This repository provides scripts for training LoRA (Low-Rank Adaptation) models 
 This repository is unofficial and not affiliated with the official repositories of these architectures.
 
 *This repository is under development.*
+## SCM LTX-2.5 Enhanced Branch
+
+This branch extends Musubi Tuner with enhanced support for LTX-2.5 workflows and a modern Python, PyTorch, and CUDA software stack.
+
+### Validated LTX-2.5 Environment
+
+The following configuration has been tested with real LTX-2.5 preprocessing and LoRA training workloads:
+
+| Component | Validated Version |
+| --- | --- |
+| Python | 3.14.7 |
+| PyTorch | 2.13.0+cu130 |
+| CUDA | 13.0 |
+| GPU | NVIDIA GeForce RTX 5060 Ti |
+| Transformers | 5.15.0 |
+| Diffusers | 0.32.1 |
+| Musubi Tuner | 0.3.4+scm.1 |
+
+This is a **validated configuration**, not a statement of minimum system requirements. Other Python, PyTorch, CUDA, GPU, and dependency combinations may work but have not necessarily been tested with this branch.
+
+### LTX-2.5 Workflow Validation
+
+The SCM branch has been successfully tested with:
+
+- LTX-2.5 latent caching
+- Gemma 4 text-encoder caching
+- Split LTX-2.5 transformer and Gemma text-encoder checkpoints
+- LTX-2.5 DEV/BF16 model workflows
+- LTX-2.5 LoRA training
+- Multiple successfully trained and tested LTX-2.5 LoRAs
+
+The validated Gemma 4 text-encoder caching workflow has successfully processed a complete 23-item production training dataset using the software stack listed above.
+
+The standard upstream Musubi Tuner installation and usage documentation remains below and should be used for general Musubi Tuner workflows. SCM-specific documentation describes configurations and functionality validated by this branch.
+
+### Tested Windows Examples
+
+This branch includes tested Windows batch-file examples for common LTX-2.5 workflows. These examples are intended as known-good starting points rather than universal configurations.
+
+The examples cover:
+
+- LTX-2.5 latent caching
+- Gemma 4 text-encoder caching
+- LoRA training
+- One-step LoRA smoke testing
+- ComfyUI-compatible LoRA output
+
+See [`examples/ltx25/`](./examples/ltx25/) for the example scripts and configuration notes.
+
+The smoke-test workflow is recommended before beginning a full training run. It verifies the training pipeline with a single optimizer step and confirms that a checkpoint can be written successfully.
+
+Paths, dataset locations, model locations, and memory-related settings must be adjusted for the user's environment.
 
 ### Sponsors
 

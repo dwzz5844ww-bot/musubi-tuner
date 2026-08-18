@@ -1,0 +1,11 @@
+[general]
+resolution = [512, 320]
+caption_extension = ".txt"
+batch_size = 1
+enable_bucket = true
+bucket_no_upscale = true
+cache_directory = "C:/Path_To_Cache_Folder/cache"
+
+[[datasets]]
+image_directory = "C:/Path_To_Dataset_Folder/dataset"
+num_repeats = 6
