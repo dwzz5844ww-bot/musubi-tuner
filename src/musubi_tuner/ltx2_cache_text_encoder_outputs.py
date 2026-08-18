@@ -11,6 +11,10 @@ import argparse
 import os
 
 import logging
+
+from musubi_tuner.scm_logging import configure_scm_logging
+configure_scm_logging()
+
 from contextlib import nullcontext
 import torch
 from safetensors.torch import save_file
