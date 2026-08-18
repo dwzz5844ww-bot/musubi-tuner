@@ -14,6 +14,10 @@ from contextlib import nullcontext
 from typing import List, Optional, Sequence, cast
 
 import logging
+# SCM: suppress optional PyTorch FLOP-counter noise when Triton is not installed.
+# Triton is not required for normal LTX latent caching.
+from musubi_tuner.scm_logging import configure_scm_logging
+configure_scm_logging()
 import numpy as np
 import torch
 from safetensors.torch import save_file
