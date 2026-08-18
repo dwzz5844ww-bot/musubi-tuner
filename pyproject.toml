@@ -1,14 +1,14 @@
 [project]
 name = "musubi-tuner"
-version = "0.3.4"
+version = "0.3.4+scm.1"
 description = "Musubi Tuner by kohya_ss"
 readme = "README.md"
-requires-python = ">=3.10, <3.13"
+requires-python = ">=3.10, <3.15"
 dependencies = [
     "accelerate>=1.7.0",
     "adv_optm==2.2.3",
     "apollo-torch==1.0.3",
-    "av==14.0.1",
+    "av==18.1.0",
     "bitsandbytes",
     "diffusers==0.32.1",
     "einops==0.7.0",
