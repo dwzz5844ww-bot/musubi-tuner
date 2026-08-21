@@ -48,8 +48,8 @@ cu128 = [
     "torchaudio>=2.7.1",
 ]
 cu130 = [
-    "torch~=2.11.0",
-    "torchvision~=0.26.0",
+    "torch~=2.13.0",
+    "torchvision~=0.28.0",
     "torchaudio~=2.11.0",
 ]
 gui = [
